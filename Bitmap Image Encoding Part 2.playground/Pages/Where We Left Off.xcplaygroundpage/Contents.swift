@@ -54,8 +54,8 @@ for character in encodedBitmap {
  
  Write your ideas in the code comment below.
  */
-// I notice that...
-// I know this because...
+// I notice that the output you get connects to the 0's and 1's from the code
+// I know this because when there is a 0 on the code, there is a black square and when there is a 1, there is a white square.
 /*:
  Now, **remember to commit and push your work**.
  */
