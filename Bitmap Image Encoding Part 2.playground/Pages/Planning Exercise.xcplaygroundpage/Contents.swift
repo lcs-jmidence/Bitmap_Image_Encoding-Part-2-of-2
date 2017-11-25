@@ -22,10 +22,10 @@
  */
 
 // Here's my list of points describing how I decoded the image...
-// 1.
-// 2.
-// 3.
-// 4.
+// 1. I looked at the numbers
+// 2. I know that the first number is the amount of white squares there are
+// 3. I know that the second number is the amount of black squares there are
+// 4. the 3rd number is the amount of white squares and so on
 // 5.
 // etc. (add more points as needed)
 
