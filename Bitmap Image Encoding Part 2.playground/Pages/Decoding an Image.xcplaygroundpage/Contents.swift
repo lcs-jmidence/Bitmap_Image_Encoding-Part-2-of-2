@@ -20,16 +20,33 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-1,3,1
-4,1
-1,4
-0,1,3,1
-0,1,3,1
-1,4
+w9w9w2
+w9w9w2
+w7b6w8
+w5b2G1g4G1b2w6
+w4b2G1g6G1b2w5
+w4b9b3w5
+w3b1G1g1G8g1G1b1w4
+w2b1G1b9b3G1b1w3
+w2b1G1b1o1w2o4w2o1b1G1b1w3
+w3b1o1y1w1y6w1y1o1b1w4
+w3b1o1y1w1y6w1y1o1b1w4
+w3b1o1y4o2y4o1b1w4
+w2b1G1b1o1w1y1b4y1w1o1b1G1b1w3
+w2b1G2b3G4b3G2b1w3
+w3b1G2g1b1g1b2g1b1g1G2b1w4
+w4b2G1b1G4b1G1b2w5
+w5b3G4b3w6
+w6b2G4b2w7
+w8b4w9
+w9w9w2
+w9w9w2
 """
 
 // Make a canvas
-let canvas = Canvas(width: 402, height: 402)
+let canvas = Canvas(width: 402, height: 422)
+
+
 
 // Make a grid
 // NOTE: The code that builds the grid was tucked away in something called a *function* to keep things tidy. We'll learn about functions later.
@@ -52,6 +69,9 @@ var drawThisManyPixels = 0
 
 // Iterate over each character in the encoded bitmap string
 for character in encodedBitmap {
+    
+    // What is the current character
+    character
     
     // Set colour at start of a line
     if character == "0" {
@@ -87,22 +107,47 @@ for character in encodedBitmap {
         canvas.fillColor = Color.white
         currentColor = "white"
         
-    } else {
+    }
+    else if character == "w" {
+        canvas.fillColor = Color.white
+        }
+    else if character == "b" {
+        canvas.fillColor = Color.black
+    }
+    else if character == "g" {
+        canvas.fillColor = Color.green
+    }
+    else if character == "G" {
+        canvas.fillColor = Color.init(hue: 106, saturation: 100, brightness: 60, alpha: 100)
+    }
+    else if character == "o" {
+        canvas.fillColor = Color.orange
+    }
+    else if character == "w" {
+        canvas.fillColor = Color.white
+    }
+    else if character == "y" {
+        canvas.fillColor = Color.yellow
+    }
+    
+    else {
+        
+        print(character)
         
         // Get the new number of pixels to draw
         drawThisManyPixels = Int(String(character))!
         
         // Draw the pixels
         for _ in 1...drawThisManyPixels {
-
+            
             // Draw the enlarged "pixel"
             canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: cellSize, height: cellSize)
             
             // Increase x so that the next pixel is drawn to the right of this one
             x += cellSize
-
+            
         }
-
+        
     }
     
 }

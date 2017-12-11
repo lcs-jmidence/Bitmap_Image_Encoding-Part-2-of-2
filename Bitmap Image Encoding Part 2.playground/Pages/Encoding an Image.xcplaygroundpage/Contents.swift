@@ -25,6 +25,9 @@ let encodedBitmap = """
 1,4
 """
 
+
+
+
 /*:
  ## Printing individual characters of a string
  
