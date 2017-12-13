@@ -44,6 +44,8 @@ w9w9w2
 """
 
 // Make a canvas
+//let canvas = Canvas(width: 402, height: 422)
+//If I want to look at it well on xcode, delete the ultra quality
 let canvas = Canvas(width: 402, height: 422)
 
 
@@ -151,6 +153,9 @@ for character in encodedBitmap {
     }
     
 }
+
+// Copy the image to the clipboard
+canvas.copyToClipboard()
 
 /*:
  ### Check the results
